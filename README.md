@@ -2,8 +2,6 @@
 
 <p align="center">A movie-making editor for <b>Call of Duty: Black Ops II</b> films (theater demos), on the Redacted client.</p>
 
-<p align="center">Made by Censored &amp; Nano</p>
-
 <p align="center">
   <a href="https://github.com/SonderEnterprises/T6Iris/releases"><img src="https://img.shields.io/github/v/release/SonderEnterprises/T6Iris?label=Download" alt="Download"></a>
 </p>
@@ -78,6 +76,15 @@ MSBuild IWXMVM.sln /t:t6 /p:Configuration=Release /p:Platform=x86
 ```
 
 The build makes `t6\bin\Win32\Release\T6iris.Red32n`, the Redacted plugin.
+
+## Credits
+
+- **[IWXMVM](https://github.com/reallyluckyy/IWXMVM)**, the editing mod T6Iris is built on, by
+  [reallyluckyy](https://github.com/reallyluckyy) and its contributors: [Caball009](https://github.com/Caball009),
+  [kruumy](https://github.com/kruumy), [lxkast](https://github.com/lxkast), [mallgrab](https://github.com/mallgrab),
+  [imgemmy](https://github.com/imgemmy) and [mrks2](https://github.com/mrks2).
+- **[Iris Studio](https://github.com/yerbisonline/IrisStudio)**, the fork of IWXMVM that T6Iris continues.
+- **[Plutonium](https://plutonium.pw)**, whose game files Black Ops II runs with.
 
 ## License
 

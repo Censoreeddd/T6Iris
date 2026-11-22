@@ -1,6 +1,6 @@
 # T6Iris 1.3.2
 
-A movie-making editor for **Black Ops II** films (theater demos), on the Redacted client. Made by Censored & Nano.
+A movie-making editor for **Black Ops II** films (theater demos), on the Redacted client.
 
 > **Test release.** Things may break: if something goes wrong, see *Reporting a problem* below.
 
@@ -44,6 +44,12 @@ Get **T6iris-1.3.2.zip** from the assets below, then follow `INSTALL.txt` inside
 
 Send `IWXMVM.log` from your Black Ops II folder (and `IWXMVM.1.log` if there is one), with what you did just before it went wrong. If the game froze or crashed, send it before starting the game again.
 
+## Credits
+
+- **[IWXMVM](https://github.com/reallyluckyy/IWXMVM)**, the editing mod T6Iris is built on, by [reallyluckyy](https://github.com/reallyluckyy) and its contributors: [Caball009](https://github.com/Caball009), [kruumy](https://github.com/kruumy), [lxkast](https://github.com/lxkast), [mallgrab](https://github.com/mallgrab), [imgemmy](https://github.com/imgemmy) and [mrks2](https://github.com/mrks2).
+- **[Iris Studio](https://github.com/yerbisonline/IrisStudio)**, the fork of IWXMVM that T6Iris continues.
+- **[Plutonium](https://plutonium.pw)**, whose game files Black Ops II runs with.
+
 ## Source and licences
 
-T6Iris is based on Iris Studio, a fork of [IWXMVM](https://github.com/reallyluckyy/IWXMVM), under the GPL-3.0. Its source code is this repository; the libraries and fonts it uses and their licences are listed in `THIRD-PARTY.txt` in the zip.
+T6Iris is under the GPL-3.0, as IWXMVM and Iris Studio are. Its source code is this repository; the libraries and fonts it uses and their licences are listed in `THIRD-PARTY.txt` in the zip.
