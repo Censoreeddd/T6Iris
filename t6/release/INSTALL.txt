@@ -5,9 +5,16 @@ A movie-making editor for Black Ops II films (theater demos): free, dolly and bo
 cameras, keyframes, depth of field with bokeh, lens flares, lens dirt, camera
 lenses and shake, sky replacement, colour grading and recording to video.
 
-Made by Censored & Nano.
+Built on IWXMVM (https://github.com/reallyluckyy/IWXMVM) by reallyluckyy and its
+contributors, through Iris Studio; Black Ops II runs with Plutonium's files
+(https://plutonium.pw).
 
-New in 1.3.2 (a test release):
+New in 1.3.3 (a test release):
+- Two or more lights now all show: the game lights one spot light at a time, so
+  any spot after the first is drawn as a point light along its beam.
+- The editor's top bar shows just the version.
+
+New in 1.3.2:
 - Green screen works in Black Ops II: the map is taken away so only what you keep
   stays over the green.
 - Green screen ticks for each part: Players, Actors, Props, Guns (the guns they hold

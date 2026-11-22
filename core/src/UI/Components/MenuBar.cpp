@@ -258,8 +258,7 @@ namespace IWXMVM::UI
             DrawHelpMenu();
 
             // the demo and how long it is, then the version, on the right
-            const auto version = std::format("{} {} \xC2\xB7 Made by Censored & Nano",
-                                             ModName(Mod::GetGameInterface()->GetGame()), IWXMVM_VERSION);
+            const auto version = std::format("{} {}", ModName(Mod::GetGameInterface()->GetGame()), IWXMVM_VERSION);
             std::string demo;
             if (Mod::GetGameInterface()->GetGameState() == Types::GameState::InDemo)
             {

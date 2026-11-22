@@ -1,4 +1,4 @@
-# T6Iris 1.3.2
+# T6Iris 1.3.3
 
 A movie-making editor for **Black Ops II** films (theater demos), on the Redacted client.
 
@@ -6,7 +6,7 @@ A movie-making editor for **Black Ops II** films (theater demos), on the Redacte
 
 ## Download
 
-Get **T6iris-1.3.2.zip** from the assets below, then follow `INSTALL.txt` inside it:
+Get **T6iris-1.3.3.zip** from the assets below, then follow `INSTALL.txt` inside it:
 
 1. Close the game.
 2. Copy the `Plugins` folder from the zip into your Black Ops II folder (the one with the Redacted client) and let it merge.
@@ -20,6 +20,11 @@ Get **T6iris-1.3.2.zip** from the assets below, then follow `INSTALL.txt` inside
 - **Scene:** actors (any multiplayer character) with animations, guns, shots and hits; killstreaks with moving parts, lights and blasts; props and effects. An actor can **shoot at** another.
 - **Record:** ProRes or video straight from the game, and multi-pass streams: Full frame, **Green screen**, World only, No gun, Gun only, Depth and Normals.
 - **The editor:** tabs as icons on the right, a glass look with a gradient you can colour, and the Alte Haas Grotesk font.
+
+## New in 1.3.3
+
+- Two or more lights now all show: the game lights one spot light at a time, so any spot after the first is drawn as a point light along its beam.
+- The editor's top bar shows just the version.
 
 ## New in 1.3.2
 

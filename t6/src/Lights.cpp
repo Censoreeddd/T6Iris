@@ -101,6 +101,15 @@ namespace IWXMVM::T6::Lights
         if (std::ranges::none_of(scene, [](const Types::Actor& actor) { return actor.light.has_value(); }))
             return;
 
+        // (for finding why lights don't show: what was added, and the scene's count after, every 3 s)
+        static ULONGLONG lastReport = 0;
+        std::string report;
+        const bool reporting = GetTickCount64() - lastReport > 3000;
+        if (reporting)
+            lastReport = GetTickCount64();
+        // the game draws one spot light a frame (more are added to its list, but only one lights anything), so the
+        // first spot is a spot and the others are drawn as point lights where their beams land, as near as it goes
+        bool spotUsed = false;
         const auto tick = Components::Playback::GetActorTick();
         const auto timelineTick = Components::Playback::GetTimelineTick();
         const auto keys = Components::Lights::GetKeys();
@@ -112,7 +121,11 @@ namespace IWXMVM::T6::Lights
             const auto state = LightLogic::GetState(
                 sceneActor, keys && found != keys->end() ? found->second : LightLogic::Keys{}, tick, timelineTick);
             if (!state)
+            {
+                if (reporting)
+                    report += std::format(" [{}: no state at this tick]", sceneActor.name);
                 continue;
+            }
 
             const auto actor = Components::Lights::WithKeyedPlacement(sceneActor, timelineTick);
             auto placed = LightLogic::Place(actor);
@@ -129,10 +142,32 @@ namespace IWXMVM::T6::Lights
                 LOG_DEBUG("T6: adding light {} at ({:.0f}, {:.0f}, {:.0f}), radius {:.0f}", actor.name,
                           placed.position.x, placed.position.y, placed.position.z, state->radius);
             }
-            if (state->kind == Types::LightKind::Spot)
+            if (reporting)
+                report += std::format(" [{} {} at ({:.0f}, {:.0f}, {:.0f}) radius {:.0f} colour ({:.2f}, {:.2f}, {:.2f})]",
+                                      actor.name, state->kind == Types::LightKind::Spot ? "spot" : "omni",
+                                      placed.position.x, placed.position.y, placed.position.z, state->radius,
+                                      state->color.r, state->color.g, state->color.b);
+            if (state->kind == Types::LightKind::Spot && !spotUsed)
+            {
+                spotUsed = true;
                 AddSpot(*state, placed);
+            }
+            else if (state->kind == Types::LightKind::Spot && glm::length(placed.direction) > 0.001f)
+            {
+                // (a point light a third of the way along the beam, as wide as the cone is there and a little more)
+                auto point = *state;
+                const auto along = state->radius * 0.35f;
+                const auto halfAngle = glm::radians(std::clamp(state->cone, 2.0f, 170.0f) * 0.5f);
+                point.radius = std::clamp(along * std::tan(halfAngle) * 2.0f + state->radius * 0.25f, 32.0f,
+                                          state->radius);
+                AddOmni(point, placed.position + glm::normalize(placed.direction) * along);
+            }
             else
                 AddOmni(*state, placed.position);
         }
+        if (reporting)
+            LOG_DEBUG("T6: lights added this frame:{}; the scene's lights now {}, r_dlightLimit {}", report,
+                      *reinterpret_cast<const int*>(0x3553BFC),
+                      Functions::GetDvarNumber("r_dlightLimit").value_or(-1.0f));
     }
 }  // namespace IWXMVM::T6::Lights
