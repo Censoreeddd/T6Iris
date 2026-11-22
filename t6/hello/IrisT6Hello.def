@@ -1,0 +1,11 @@
+LIBRARY IrisT6Hello
+EXPORTS
+    PreInit
+    PostInit
+    Uninit
+    OfficialMod
+    AuthorInfo
+    ExtendedInfo
+    DependencyCount
+    GetDependency
+    SendMessageB

@@ -1,0 +1,42 @@
+T6iris is based on Iris Studio, a fork of IWXMVM (GPL-3.0). It includes:
+
+  Dear ImGui              MIT              https://github.com/ocornut/imgui
+  spdlog                  MIT              https://github.com/gabime/spdlog
+  JSON for Modern C++     MIT              https://github.com/nlohmann/json
+  GLM                     MIT / Happy Bunny https://github.com/g-truc/glm
+  magic_enum              MIT              https://github.com/Neargye/magic_enum
+  MinHook                 BSD-2-Clause     https://github.com/TsudaKageyu/minhook
+  incbin                  Unlicense        https://github.com/graphitemaster/incbin
+  tinyobjloader           MIT              https://github.com/tinyobjloader/tinyobjloader
+  IconFontCppHeaders      zlib             https://github.com/juliettef/IconFontCppHeaders
+  Font Awesome (font)     SIL OFL 1.1      https://fontawesome.com
+  Alte Haas Grotesk (font) freeware, by Yann Le Coroller   www.yannlecoroller.com
+  ReShade add-on API      BSD-3-Clause     https://github.com/crosire/reshade
+  tinyexr                 BSD-3-Clause     https://github.com/syoyo/tinyexr
+  miniz                   MIT              https://github.com/richgel999/miniz
+
+Their license texts are in the licenses folder.
+
+Plugins\T6iris\ffmpeg.exe is FFmpeg (https://ffmpeg.org), licensed under the GPL v3,
+built by Gyan Doshi (https://www.gyan.dev/ffmpeg/builds/). Its source code is at
+https://github.com/FFmpeg/FFmpeg and the build's at https://github.com/GyanD/codexffmpeg.
+
+T6iris-campaign-animations.bin holds animations of Black Ops II's campaign, read from
+the game's zone/all/common.ff with T6iris's t6/tools/animations (in its source code),
+which is built against OpenAssetTools (GPL-3.0, https://github.com/Laupetin/OpenAssetTools).
+The animations are Activision's, from the game; the file only lets the multiplayer
+game use what the campaign already has.
+
+Alte Haas Grotesk, the editor's font, comes with its author's licence text:
+
+  Alte Haas Grotesk is a typeface that look like an helvetica printed in an old
+  Muller-Brockmann Book.
+
+  These fonts are freeware and can be distributed as long as they are together with
+  this text file.
+
+  I would appreciate very much to see what you have done with it anyway.
+
+  yann le coroller
+  www.yannlecoroller.com
+  yann@lecoroller.com

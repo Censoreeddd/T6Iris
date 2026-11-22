@@ -1,0 +1,11 @@
+; The functions the Redacted client calls on a plugin, by their plain names (as ExtendedConsole.Red32n exports them)
+EXPORTS
+    PreInit
+    PostInit
+    Uninit
+    OfficialMod
+    AuthorInfo
+    ExtendedInfo
+    DependencyCount
+    GetDependency
+    SendMessageB

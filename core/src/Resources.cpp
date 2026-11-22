@@ -1,0 +1,25 @@
+#include "StdInclude.hpp"
+#include "Resources.hpp"
+
+namespace IWXMVM::Resources
+{
+    // the editor's own font: Alte Haas Grotesk (bold, for its text and its titles alike)
+    INCBIN(RUBIK_FONT, "src/UI/FontFiles/AlteHaasGroteskBold.ttf");
+    INCBIN(RUBIK_BOLD_FONT, "src/UI/FontFiles/AlteHaasGroteskBold.ttf");
+    INCBIN(FA_ICONS_FONT, "resources/fa-solid-900.ttf");
+
+    INCBIN(GIZMO_TRANSLATE_MODEL, "resources/gizmo_translate.obj");
+    INCBIN(GIZMO_ROTATE_MODEL, "resources/gizmo_rotate.obj");
+
+    INCBIN(VERTEX_SHADER, "resources/shaders/vertex.hlsl");
+    INCBIN(PIXEL_SHADER, "resources/shaders/pixel.hlsl");
+
+    INCBIN(DEPTH_VERTEX_SHADER, "resources/shaders/depth_vs.hlsl");
+    INCBIN(DEPTH_PIXEL_SHADER, "resources/shaders/depth_ps.hlsl");
+
+    INCBIN(RELOAD_PROFILES, "resources/reload-profiles.json");
+    INCBIN(CHARACTERS, "resources/characters.json");
+    INCBIN(ANIMATIONS, "resources/animations.json");
+    INCBIN(CAMPAIGN_MAPS, "resources/campaign-maps.json");
+    INCBIN(CAMPAIGN_WEAPONS, "resources/campaign-weapons.json");
+};  // namespace IWXMVM::Resources

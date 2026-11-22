@@ -1,0 +1,1 @@
+tinyexr v1.0.12 (https://github.com/syoyo/tinyexr, BSD 3-clause, LICENSE-tinyexr) with the miniz it ships in deps/miniz (MIT, LICENSE-miniz), for the Sky's OpenEXR images (src/Utilities/HdrImage.cpp).
