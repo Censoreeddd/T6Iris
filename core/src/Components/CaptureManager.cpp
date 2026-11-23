@@ -763,8 +763,13 @@ namespace IWXMVM::Components
     {
         auto path = GetFFmpegPath();
         char shortPathBuf[MAX_PATH];
-        GetShortPathName(path.string().c_str(), shortPathBuf, MAX_PATH);
-        std::string shortPath = shortPathBuf;
+        std::string shortPath = path.string();
+        if (GetShortPathName(path.string().c_str(), shortPathBuf, MAX_PATH) > 0)
+            shortPath = shortPathBuf;
+        // (a drive without short names keeps spaces in it, as "bo2_game_files - Copy": quoted, or cmd runs
+        // "F:\Games\bo2_game_files" and nothing is recorded)
+        if (shortPath.find(' ') != std::string::npos)
+            shortPath = "\"" + shortPath + "\"";
         switch (captureSettings.outputFormat)
         {
             case OutputFormat::ImageSequence:
@@ -957,7 +962,8 @@ namespace IWXMVM::Components
         {
             std::string ffmpegCommand = GetFFmpegCommand(captureSettings, outputDirectory, screenDimensions, 0);
             LOG_DEBUG("ffmpeg command: {}", ffmpegCommand);
-            pipe = _popen(ffmpegCommand.c_str(), "wb");
+            // (in quotes as a whole: cmd /c takes off the first and last, keeping the program's and the file's own)
+            pipe = _popen(("\"" + ffmpegCommand + "\"").c_str(), "wb");
             if (!pipe)
             {
                 LOG_ERROR("ffmpeg pipe open error");
@@ -973,7 +979,7 @@ namespace IWXMVM::Components
 
                 std::string ffmpegCommand = GetFFmpegCommand(captureSettings, outputDirectory, screenDimensions, i);
                 LOG_DEBUG("ffmpeg command: {}", ffmpegCommand);
-                pass.pipe = _popen(ffmpegCommand.c_str(), "wb");
+                pass.pipe = _popen(("\"" + ffmpegCommand + "\"").c_str(), "wb");
                 if (!pass.pipe)
                 {
                     LOG_ERROR("ffmpeg pipe open error");

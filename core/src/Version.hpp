@@ -4,7 +4,7 @@
 
 namespace IWXMVM
 {
-    constexpr const char* IWXMVM_VERSION = "1.3.3";
+    constexpr const char* IWXMVM_VERSION = "1.3.4";
 
     // The mod's name in each game, as the menu bar, About and the message boxes have it: the game's codename, then
     // "iris" (2026-10-28). The launcher that sets them up is Iris Studio.

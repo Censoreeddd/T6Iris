@@ -1,4 +1,4 @@
-# T6Iris 1.3.3
+# T6Iris 1.3.4
 
 A movie-making editor for **Black Ops II** films (theater demos), on the Redacted client.
 
@@ -6,7 +6,7 @@ A movie-making editor for **Black Ops II** films (theater demos), on the Redacte
 
 ## Download
 
-Get **T6iris-1.3.3.zip** from the assets below, then follow `INSTALL.txt` inside it:
+Get **T6iris-1.3.4.zip** from the assets below, then follow `INSTALL.txt` inside it:
 
 1. Close the game.
 2. Copy the `Plugins` folder from the zip into your Black Ops II folder (the one with the Redacted client) and let it merge.
@@ -46,6 +46,10 @@ Get **T6iris-1.3.3.zip** from the assets below, then follow `INSTALL.txt` inside
 ![The Normals pass: surfaces coloured by which way they face, with the list of streams](https://raw.githubusercontent.com/Censoreeddd/T6Iris/main/docs/images/t6/normals.webp)
 
 **Normals pass and the streams.** Surfaces coloured by the way they face, for relighting in compositing. Multi-pass recording captures any of these streams at once, frame for frame: **Full frame**, **Green screen**, **World only**, **No gun**, **Depth** and **Normals**.
+
+## New in 1.3.4
+
+- **Recording works when your Black Ops II folder has spaces in its name** (for example `E:\games\bo2 t6`). Before, ffmpeg couldn't start there, so a capture finished but no video was saved. If you're on 1.3.3 and your recordings never appear, update to this.
 
 ## New in 1.3.3
 
